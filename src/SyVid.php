@@ -9,6 +9,7 @@
 namespace Vega6;
 
 use Exception;
+use CURLFile;
 
 /**
  * Class Syvid
@@ -75,7 +76,7 @@ class SyVid
               'initiate' => true,
               'title' => $title,
               'description' => $description,
-              'video_file' => new \CURLFile($video_path, 'video/mp4')
+              'video_file' => new CURLFile($video_path, 'video/mp4')
           ];
 
           $ch = curl_init();
