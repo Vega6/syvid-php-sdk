@@ -16,28 +16,14 @@ use Exception;
  */
 class Syvid
 {
-    private $username;
-    private $password;
     private $access_token;
 
     /**
      * Syvid constructor.
-     * @internal param $username
-     * @internal param $password
      */
     function __construct()
     {
 
-    }
-
-    /**
-     * @param mixed $username
-     * @param $password
-     */
-    public function setAuth($username, $password)
-    {
-        $this->username = $username;
-        $this->password = $password;
     }
 
     /**
@@ -46,42 +32,6 @@ class Syvid
     public function setAccessToken($access_token)
     {
         $this->access_token = $access_token;
-    }
-
-
-    /**
-     * check for syvid credentials validity
-     * @throws Exception
-     */
-    public function check()
-    {
-        if (empty($this->username) || empty($this->password)) {
-            throw new Exception('Either username or password or both is not provided');
-        }
-
-        $host = 'http//app.syvid.io/';
-        $auth_url = $host.'api/auth/login';
-
-        $data = [
-            'username' => $this->username,
-            'password' => $this->password
-        ];
-
-        $data = http_build_query($data);
-
-        $ch = curl_init($auth_url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-
-        $response = curl_exec($ch);
-        curl_close($ch);
-
-        debug($response);
-
-        $response = json_decode($response);
-
-        debug($response);
     }
 
     /**
