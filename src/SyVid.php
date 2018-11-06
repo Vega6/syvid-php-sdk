@@ -14,7 +14,7 @@ use Exception;
  * Class Syvid
  * @package Vega6
  */
-class Syvid
+class SyVid
 {
     private $access_token;
 
