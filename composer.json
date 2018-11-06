@@ -1,0 +1,21 @@
+{
+    "name": "vega6/syvid-sdk",
+    "type": "library",
+    "description": "Manage user campaigns and upload videos to user's campaign using access token.",
+    "keywords": ["vega6", "syvid", "syvid.io", "app.syvid.io", "syvid app", "vega6 syvid", "upload videos", "upload to syvid", "vega6 syvid upload", "social upload videos", "upload videos to youtube and facebook", "php syvid", "vega6 webware technologies", "Anuj Sharma", "TBE", "Anuj TBE"],
+    "homepage": "http://thebornengineer.com",
+    "authors": [
+        {
+            "name": "Anuj Sharma",
+            "email": "contact@anujsh.in",
+            "homepage": "https://anujsh.in",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": {"Vega6\\": "src/"}
+    }
+}
